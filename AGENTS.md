@@ -127,7 +127,7 @@ For **every change**, before writing or modifying any code or tests:
    - Which files will be touched
    - Which tests will be added or modified
    - Why the change is necessary  
-2. The agent must **present this plan to the developer** and **wait for explicit confirmation** before proceeding.
+2. The agent must **present this plan to the developer** and **wait for explicit confirmation** before proceeding if clarification is needed. 
 
 This planning phase is mandatory.
 
@@ -172,6 +172,17 @@ When you propose or generate changes, follow these rules:
 
 ---
 
+### Test Review Gate (NEW)
+
+For any code-related request:
+
+1. Write the necessary tests first and present them to the developer for review.
+2. Wait for explicit developer approval of the tests before beginning implementation.
+3. In implementation, make the feature work first; refactor afterward for readability and maintainability.
+4. During refactor, look for opportunities to extract reusable pieces into separate files or methods.
+
+---
+
 ## Coding Conventions
 
 ### General TypeScript
@@ -207,6 +218,7 @@ When you propose or generate changes, follow these rules:
 When operating in this repository:
 
 - Follow **this AGENTS.md** as persistent guidance
+- Use **conventional commit messages** for all commits (e.g., `feat:`, `fix:`, `docs:`)
 - Stick to the defined stacks:
   - **React + Tailwind + Vite** (frontend)
   - **Express + Prisma + Postgres** (backend)
