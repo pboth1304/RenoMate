@@ -7,6 +7,8 @@
   "scripts": {
     "test": "pnpm -r test",
     "build": "pnpm -r build",
-    "start": "pnpm -r start"
+    "start": "pnpm -r start",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down"
   }
 }

@@ -2,7 +2,7 @@ import { createRequest, createResponse } from "node-mocks-http";
 import { healthHandler } from "./app.js";
 
 describe("GET /health", () => {
-  it("responds with ok status payload", async () => {
+  it("should respond with ok status payload", async () => {
     const req = createRequest({
       method: "GET",
       url: "/health",

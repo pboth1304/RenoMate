@@ -161,6 +161,7 @@ When you propose or generate changes, follow these rules:
    - **Express routes:** route-level tests hitting endpoints, checking JSON & status codes  
    - **React components:** test interaction & visible DOM behavior  
    - **E2E:** only for core, critical flows
+   - **Test descriptions:** begin every test name with `should ...` for consistency
 
 4. **Refactor with green tests**
    - Once tests pass, improve structure and readability
