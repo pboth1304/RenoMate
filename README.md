@@ -76,6 +76,24 @@ RenoMate is a single-user home renovation planner that helps you organize projec
    pnpm test
    ```
 
+## Local Postgres via Docker
+Start a local Postgres instance with Docker:
+```bash
+pnpm db:up
+```
+Connection string (also in `server/.env.example`):
+```
+postgresql://renomate:renomate@localhost:5432/renomate?schema=public
+```
+Stop the container:
+```bash
+pnpm db:down
+```
+After the DB is up, run Prisma migrations:
+```bash
+pnpm --filter @renomate/server prisma:migrate
+```
+
 ## Development Scripts
 - `pnpm dev`: Run frontend/backend dev servers (depending on workspace setup).
 - `pnpm test`: Run unit/component/integration tests.
