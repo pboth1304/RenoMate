@@ -54,20 +54,24 @@ RenoMate is a single-user home renovation planner that helps you organize projec
    ```bash
    pnpm install
    ```
-3. **Environment variables**
-   - Create a `.env` file based on `.env.example` (when available).
-   - Configure Postgres connection, Prisma database URL, and OAuth credentials (e.g., GitHub client ID/secret).
-4. **Database setup**
-   - Start Postgres via Docker (for local dev) or point to Neon/cloud.
-   - Run Prisma migrations when schema is available:
-     ```bash
-     pnpm prisma migrate dev
-     ```
-5. **Start the app**
+3. **Backend setup (server)**
    ```bash
-   pnpm dev
+   # Copy env template and set DATABASE_URL (Neon/local Postgres)
+   cp server/.env.example server/.env
+
+   # Run migrations (creates the placeholder User model)
+   pnpm --filter @renomate/server prisma:migrate
+
+   # Start the dev server (listens on PORT or 3000)
+   pnpm --filter @renomate/server dev
+   # Health check: GET http://localhost:3000/health -> { "status": "ok" }
    ```
-6. **Run tests**
+4. **Build & start (server)**
+   ```bash
+   pnpm --filter @renomate/server build
+   pnpm --filter @renomate/server start
+   ```
+5. **Run tests (workspace)**
    ```bash
    pnpm test
    ```
