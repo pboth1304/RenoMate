@@ -6,6 +6,6 @@ export default defineConfig({
     environment: 'node',
     clearMocks: true,
     restoreMocks: true,
-    resetMocks: true,
+    mockReset: true,
   },
 });
